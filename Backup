@@ -1,0 +1,422 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "TEST CONNEXION INTERNET",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f4db60bf.7cb8c",
+        "type": "tab",
+        "label": "AUTOMATISMES MAISON",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e102e7aa.73033",
+        "type": "group",
+        "z": "f4db60bf.7cb8c",
+        "name": "Vérification du bon fonctionnement de l'IPX",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6b83445f.95ef74",
+            "60345379.7335cc",
+            "93a6bc32.964338",
+            "6a44f6d2.63742",
+            "61b330c0.943d4",
+            "32fe9461.a31a9c",
+            "688d8710.dd2ff8",
+            "3443a94b.1d3d2e",
+            "62f42068.824698",
+            "92e23916.20c6b"
+        ],
+        "x": 64,
+        "y": 119,
+        "w": 1102,
+        "h": 302
+    },
+    {
+        "id": "0ca1a15e29858943",
+        "type": "email-transport",
+        "name": "Iot_OVH",
+        "host": "ssl0.ovh.net",
+        "port": "465",
+        "secure": true,
+        "authType": "login",
+        "proxy": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6e3ae73fd6dca1b5",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "ab99bb39a27eee06"
+            ]
+        ]
+    },
+    {
+        "id": "ce99561c603a7eb8",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Utiliser : https://medium.com/@ioTnT/writing-data-from-node-red-to-csv-or-excel-without-extra-palettes-472655d490b6",
+        "info": "",
+        "x": 420,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "33e459f5b49c6a18",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Génère MBps pour Mailing",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$string($round(payload.download.bandwidth*8/1000000,0)) & ' MBps'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "e90c0aba2c2dbf5b"
+            ]
+        ]
+    },
+    {
+        "id": "2811ceaac726f243",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "name": "Si <20Mb/s",
+        "property": "payload.download.bandwidth*8/1000000",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "20",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 280,
+        "wires": [
+            [
+                "33e459f5b49c6a18"
+            ]
+        ]
+    },
+    {
+        "id": "fa8980c41453d441",
+        "type": "file",
+        "z": "f6f2187d.f17ca8",
+        "name": "Ecrit vers le log",
+        "filename": "/data_storage/log_internet_test.log",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 700,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab99bb39a27eee06",
+        "type": "speedtest",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "maxTime": 5000,
+        "serverId": "",
+        "x": 360,
+        "y": 280,
+        "wires": [
+            [
+                "2811ceaac726f243",
+                "8b89075617fd1890"
+            ]
+        ]
+    },
+    {
+        "id": "e90c0aba2c2dbf5b",
+        "type": "email-send",
+        "z": "f6f2187d.f17ca8",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "IOT : Connexion NET KO ou lente",
+        "contentType": "text",
+        "name": "",
+        "x": 710,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b89075617fd1890",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "Paramètre les données dans le log",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$string(payload.timestamp & ',' & $round(payload.download.bandwidth*8/1000000,0)) & ' MBps'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 420,
+        "wires": [
+            [
+                "fa8980c41453d441"
+            ]
+        ]
+    },
+    {
+        "id": "6b83445f.95ef74",
+        "type": "http request",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Recupe status.xml de l'IPX",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://192.168.1.139/status.xml",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "6a44f6d2.63742"
+            ]
+        ]
+    },
+    {
+        "id": "60345379.7335cc",
+        "type": "inject",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "VERIF IPX800",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "14400",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "6b83445f.95ef74"
+            ]
+        ]
+    },
+    {
+        "id": "93a6bc32.964338",
+        "type": "debug",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Date OK, pas d'action",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6a44f6d2.63742",
+        "type": "xml",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "61b330c0.943d4"
+            ]
+        ]
+    },
+    {
+        "id": "61b330c0.943d4",
+        "type": "function",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Date OK?",
+        "func": "var d = new Date();\nif (msg.payload.response.day[0].includes(d.getFullYear().toString()))\n{\n   return [ msg, null ];\n} else {\n    msg.topic = \"ALERTE IOT : IPX800\"\n    msg.payload = \"Redémarrage de l'IPX800 demandé.\"\n   return [ null, msg ];\n}\nreturn msg;",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 460,
+        "y": 220,
+        "wires": [
+            [
+                "93a6bc32.964338"
+            ],
+            [
+                "32fe9461.a31a9c"
+            ]
+        ]
+    },
+    {
+        "id": "32fe9461.a31a9c",
+        "type": "http request",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Redémarrage de l'IPX800",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 750,
+        "y": 240,
+        "wires": [
+            [
+                "688d8710.dd2ff8"
+            ]
+        ]
+    },
+    {
+        "id": "688d8710.dd2ff8",
+        "type": "debug",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Résultat redémarrage",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "3443a94b.1d3d2e",
+        "type": "comment",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Fonctionnement",
+        "info": "Régulièrement l'IPX se dé-synchronise du serveur de temps.\nEn conséquence les tâches planifiées ne s'effectuent plus. Seul un redémarrage de l'IPX peut corriger le problème.\n\nLe flow se connecte à l'IPX et récupère le fichier status.xml contenant tous les états/compteurs de l'IPX ainsi que la valeur de son horloge. En fonction de cette valeur, il lance ou pas un redémarrage en se connectant à la page http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3\nIl vérifie que l'année de la date renvoyée par le fichier xml est bien celle de l'année en cours ce qui montre que l'IPX800 est bien synchronisée.",
+        "x": 180,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "62f42068.824698",
+        "type": "catch",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "En cas d'impossibilité de se connecter à l'IPX ou d'obtenir le fichier XML",
+        "scope": [
+            "6b83445f.95ef74"
+        ],
+        "uncaught": false,
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "92e23916.20c6b"
+            ]
+        ]
+    },
+    {
+        "id": "92e23916.20c6b",
+        "type": "function",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Construction email",
+        "func": "msg.payload = \"Erreur de connexion IPX :\"+msg.error.message\nmsg.topic = \"ALERTE IOX : IPX800\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    }
+]
