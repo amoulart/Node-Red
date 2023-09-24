@@ -1,5 +1,13 @@
 [
     {
+        "id": "8a78fc9bf03685af",
+        "type": "tab",
+        "label": "Gestion ZIGBEE",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f6f2187d.f17ca8",
         "type": "tab",
         "label": "TEST CONNEXION INTERNET",
@@ -12,6 +20,14 @@
         "label": "AUTOMATISMES MAISON",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "9a1437d70713dfd0",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "e102e7aa.73033",
@@ -34,9 +50,164 @@
             "92e23916.20c6b"
         ],
         "x": 64,
-        "y": 119,
-        "w": 1102,
-        "h": 302
+        "y": 119
+    },
+    {
+        "id": "3e85591c6b28eec5",
+        "type": "group",
+        "z": "f6f2187d.f17ca8",
+        "name": "Vérification qualité de connexion internet - Reset si nécessaire",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6e3ae73fd6dca1b5",
+            "33e459f5b49c6a18",
+            "2811ceaac726f243",
+            "fa8980c41453d441",
+            "8b89075617fd1890",
+            "e90c0aba2c2dbf5b",
+            "ab99bb39a27eee06",
+            "b0fe8155417905e8",
+            "99b24abfc303375b",
+            "acf7a47b6f6e79f6",
+            "e1d7c466b429a061",
+            "2d8b2236898a1199",
+            "22ac9e4da1fe5ebc",
+            "5fb69172.b3471",
+            "892f85fd.ddf898",
+            "d821318e160c0e62",
+            "33de0144ba188644"
+        ],
+        "x": 14,
+        "y": 199,
+        "w": 952,
+        "h": 442
+    },
+    {
+        "id": "010dbb615bda4d4e",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Connexion au système Zigbee2Mqtt",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "558f9b7183aac2bc",
+            "a4c57c169d5aacf3"
+        ],
+        "x": 54,
+        "y": 59,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "5f2614821fc98646",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Gestion de l'éclairage dans la chambre des parents",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "476a22d8152cdc57",
+            "2f6110e39eb4ed78",
+            "fa583c2e352ebefb"
+        ],
+        "x": 54,
+        "y": 159,
+        "w": 712,
+        "h": 122
+    },
+    {
+        "id": "88283a1bd84fdbce",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Gestion de l'éclairage dans l'escalier",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "88825c69e6b4406d",
+            "d9dcb29b79a10e9b",
+            "af162e119d899f79",
+            "25a9d013c63a9aaf",
+            "d6c518aaab31fad7",
+            "b2a6e10e71fecbe4",
+            "341197126f350c5d",
+            "2b0affa0c70bef38",
+            "53a0c6fe363eab8b",
+            "5a300b5c8797c7d0",
+            "b2c1c31135250f08",
+            "391d39ebc14d49c7",
+            "85670a344f522997"
+        ],
+        "x": 54,
+        "y": 299,
+        "w": 1272,
+        "h": 362
+    },
+    {
+        "id": "89dc8d7d73b0afd3",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Gestion Eclairage poubelle",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "967fa7eb7d450c61",
+            "793ac5cd61509991",
+            "a7ac1859d726211c",
+            "8b64d24335408877",
+            "7d42f86c20e1d96f",
+            "f0d704f8aace3b93",
+            "5976452880a7a5dc",
+            "4fa85a3fc565a9ba"
+        ],
+        "x": 54,
+        "y": 679,
+        "w": 1132,
+        "h": 222
+    },
+    {
+        "id": "ab3eeb9e267c29b8",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Gestion extraction air Suzanne",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a122a79d4494810f",
+            "5dac8e61d99847a3",
+            "2b7284cce37ba6de",
+            "737c6e426a364559",
+            "e90ffae1f31572e6",
+            "b0470f9c71dffca1",
+            "b1e7d727faf9950e",
+            "011462622c106d5f",
+            "98d5b6f6b6c06c65",
+            "cb3c6bbbf342522c",
+            "144c1d82ed799493"
+        ],
+        "x": 54,
+        "y": 919,
+        "w": 832,
+        "h": 342
+    },
+    {
+        "id": "18c1bbfb6a2451d9",
+        "type": "zigbee2mqtt-server",
+        "name": "",
+        "host": "localhost",
+        "mqtt_port": "1883",
+        "mqtt_username": "",
+        "mqtt_password": "",
+        "mqtt_qos": "0",
+        "tls": "",
+        "usetls": false,
+        "base_topic": "zigbee2mqtt"
     },
     {
         "id": "0ca1a15e29858943",
@@ -47,6 +218,864 @@
         "secure": true,
         "authType": "login",
         "proxy": ""
+    },
+    {
+        "id": "a4c57c169d5aacf3",
+        "type": "zigbee2mqtt-bridge",
+        "z": "8a78fc9bf03685af",
+        "g": "010dbb615bda4d4e",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "topic": null,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "558f9b7183aac2bc"
+            ]
+        ]
+    },
+    {
+        "id": "476a22d8152cdc57",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "5f2614821fc98646",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Inter_Parents (E1743)",
+        "device_id": "0x84b4dbfffefe8703",
+        "state": "action",
+        "outputAtStartup": true,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "2f6110e39eb4ed78",
+                "fa583c2e352ebefb"
+            ]
+        ]
+    },
+    {
+        "id": "2f6110e39eb4ed78",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "5f2614821fc98646",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "0x00124b0024c0026c (ZBMINI-L)",
+        "device_id": "0x00124b0024c0026c",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 600,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "88825c69e6b4406d",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Detecteur palier (E1525/E1745)",
+        "device_id": "0x680ae2fffe161575",
+        "state": "0",
+        "outputAtStartup": true,
+        "filterChanges": true,
+        "enableMultiple": false,
+        "x": 230,
+        "y": 360,
+        "wires": [
+            [
+                "85670a344f522997",
+                "5a300b5c8797c7d0"
+            ]
+        ]
+    },
+    {
+        "id": "d9dcb29b79a10e9b",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Detecteur escalier (E1525/E1745)",
+        "device_id": "0x842e14fffe4369dc",
+        "state": "0",
+        "outputAtStartup": true,
+        "filterChanges": true,
+        "enableMultiple": false,
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "85670a344f522997",
+                "5a300b5c8797c7d0"
+            ]
+        ]
+    },
+    {
+        "id": "af162e119d899f79",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 420,
+        "wires": [
+            [
+                "25a9d013c63a9aaf"
+            ]
+        ]
+    },
+    {
+        "id": "25a9d013c63a9aaf",
+        "type": "change",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "EXTINCTION",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "OFF",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 420,
+        "wires": [
+            [
+                "b2a6e10e71fecbe4"
+            ]
+        ]
+    },
+    {
+        "id": "d6c518aaab31fad7",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Baisse luminosite le soir 21:30",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 21 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "25",
+        "payloadType": "num",
+        "x": 230,
+        "y": 540,
+        "wires": [
+            [
+                "341197126f350c5d"
+            ]
+        ]
+    },
+    {
+        "id": "b2a6e10e71fecbe4",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampes_Escalier 0 a 1",
+        "device_id": "0",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1200,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "341197126f350c5d",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampes_Escalier 0 a 1",
+        "device_id": "0",
+        "command": "brightness",
+        "commandType": "z2m_cmd",
+        "payload": "30",
+        "payloadType": "num",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 480,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "2b0affa0c70bef38",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Luminosité max le matin 6:20",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "20 06 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "255",
+        "payloadType": "num",
+        "x": 230,
+        "y": 620,
+        "wires": [
+            [
+                "53a0c6fe363eab8b"
+            ]
+        ]
+    },
+    {
+        "id": "53a0c6fe363eab8b",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampes_Escalier 0 a 1",
+        "device_id": "0",
+        "command": "brightness",
+        "commandType": "z2m_cmd",
+        "payload": "255",
+        "payloadType": "num",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 480,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5a300b5c8797c7d0",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Si Présence",
+        "property": "payload.occupancy",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 340,
+        "wires": [
+            [
+                "391d39ebc14d49c7"
+            ],
+            [
+                "25a9d013c63a9aaf"
+            ]
+        ]
+    },
+    {
+        "id": "b2c1c31135250f08",
+        "type": "change",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "ALLUMAGE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ON",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 380,
+        "wires": [
+            [
+                "b2a6e10e71fecbe4",
+                "af162e119d899f79"
+            ]
+        ]
+    },
+    {
+        "id": "391d39ebc14d49c7",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Si luminosité forte (journée)",
+        "property": "payload.illuminance_above_threshold",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 920,
+        "y": 340,
+        "wires": [
+            [
+                "b2c1c31135250f08"
+            ]
+        ]
+    },
+    {
+        "id": "85670a344f522997",
+        "type": "debug",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Debug detecteurs escaliers",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5976452880a7a5dc",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Detecteur poubelles (E1525/E1745)",
+        "device_id": "0x842e14fffe8d8729",
+        "state": "0",
+        "outputAtStartup": true,
+        "filterChanges": true,
+        "enableMultiple": false,
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "4fa85a3fc565a9ba",
+                "7d42f86c20e1d96f"
+            ]
+        ]
+    },
+    {
+        "id": "8b64d24335408877",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "120",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 800,
+        "wires": [
+            [
+                "793ac5cd61509991"
+            ]
+        ]
+    },
+    {
+        "id": "793ac5cd61509991",
+        "type": "change",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "EXTINCTION",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "OFF",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 800,
+        "wires": [
+            [
+                "967fa7eb7d450c61"
+            ]
+        ]
+    },
+    {
+        "id": "967fa7eb7d450c61",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampe poubelle (LED1836G9)",
+        "device_id": "0x842e14fffe4d96de",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1030,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "7d42f86c20e1d96f",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "Si Présence",
+        "property": "payload.occupancy",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 720,
+        "wires": [
+            [
+                "f0d704f8aace3b93"
+            ],
+            [
+                "793ac5cd61509991"
+            ]
+        ]
+    },
+    {
+        "id": "a7ac1859d726211c",
+        "type": "change",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "ALLUMAGE",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ON",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 760,
+        "wires": [
+            [
+                "967fa7eb7d450c61",
+                "8b64d24335408877"
+            ]
+        ]
+    },
+    {
+        "id": "f0d704f8aace3b93",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "Si luminosité forte (journée)",
+        "property": "payload.illuminance_above_threshold",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 720,
+        "wires": [
+            [
+                "a7ac1859d726211c"
+            ]
+        ]
+    },
+    {
+        "id": "4fa85a3fc565a9ba",
+        "type": "debug",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "Debug detecteur poubelles",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "558f9b7183aac2bc",
+        "type": "debug",
+        "z": "8a78fc9bf03685af",
+        "g": "010dbb615bda4d4e",
+        "name": "ZigbeeBridge",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fa583c2e352ebefb",
+        "type": "debug",
+        "z": "8a78fc9bf03685af",
+        "g": "5f2614821fc98646",
+        "name": "Eclairage chembre parents",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "a122a79d4494810f",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Inter aeration Suzanne (E1743)",
+        "device_id": "0xec1bbdfffe991a72",
+        "state": "action",
+        "outputAtStartup": true,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 230,
+        "y": 960,
+        "wires": [
+            [
+                "737c6e426a364559"
+            ]
+        ]
+    },
+    {
+        "id": "5dac8e61d99847a3",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 1060,
+        "wires": [
+            [
+                "2b7284cce37ba6de"
+            ]
+        ]
+    },
+    {
+        "id": "2b7284cce37ba6de",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Extraction OFF",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Extraction d’air chambre Suzanne (E1603/E1702/E1708)",
+        "device_id": "0x14b457fffec4f7cc",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 780,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "737c6e426a364559",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 1000,
+        "wires": [
+            [
+                "2b7284cce37ba6de"
+            ],
+            [
+                "e90ffae1f31572e6",
+                "5dac8e61d99847a3"
+            ]
+        ]
+    },
+    {
+        "id": "e90ffae1f31572e6",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Extraction ON",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Extraction d’air chambre Suzanne (E1603/E1702/E1708)",
+        "device_id": "0x14b457fffec4f7cc",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 580,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "b0470f9c71dffca1",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Matin Semaine",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 08 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 1100,
+        "wires": [
+            [
+                "98d5b6f6b6c06c65",
+                "011462622c106d5f"
+            ]
+        ]
+    },
+    {
+        "id": "b1e7d727faf9950e",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Matin Week-End",
+        "props": [],
+        "repeat": "",
+        "crontab": "00 08 * * 6,0",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1140,
+        "wires": [
+            [
+                "98d5b6f6b6c06c65",
+                "011462622c106d5f"
+            ]
+        ]
+    },
+    {
+        "id": "011462622c106d5f",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 1160,
+        "wires": [
+            [
+                "2b7284cce37ba6de"
+            ]
+        ]
+    },
+    {
+        "id": "98d5b6f6b6c06c65",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Extraction ON",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Extraction d’air chambre Suzanne (E1603/E1702/E1708)",
+        "device_id": "0x14b457fffec4f7cc",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 580,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "cb3c6bbbf342522c",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Midi",
+        "props": [],
+        "repeat": "",
+        "crontab": "55 11 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1180,
+        "wires": [
+            [
+                "98d5b6f6b6c06c65",
+                "011462622c106d5f"
+            ]
+        ]
+    },
+    {
+        "id": "144c1d82ed799493",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "ab3eeb9e267c29b8",
+        "name": "Soir",
+        "props": [],
+        "repeat": "",
+        "crontab": "55 19 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 1220,
+        "wires": [
+            [
+                "98d5b6f6b6c06c65",
+                "011462622c106d5f"
+            ]
+        ]
     },
     {
         "id": "3cc11d24.ff01a2",
@@ -62,24 +1091,29 @@
         "id": "6e3ae73fd6dca1b5",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
         "name": "",
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "3600",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "reset",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 280,
+        "x": 150,
+        "y": 240,
         "wires": [
             [
-                "ab99bb39a27eee06"
+                "99b24abfc303375b"
             ]
         ]
     },
@@ -97,13 +1131,14 @@
         "id": "33e459f5b49c6a18",
         "type": "change",
         "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
         "name": "Génère MBps pour Mailing",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$string($round(payload.download.bandwidth*8/1000000,0)) & ' MBps'",
+                "to": "$string($round(payload.download.bandwidth*8/1000000,0)) & ' MBps. KO! Nouvelle mesure dans une minute.'",
                 "tot": "jsonata"
             }
         ],
@@ -112,11 +1147,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 320,
+        "x": 440,
+        "y": 460,
         "wires": [
             [
-                "e90c0aba2c2dbf5b"
+                "e90c0aba2c2dbf5b",
+                "99b24abfc303375b"
             ]
         ]
     },
@@ -124,6 +1160,7 @@
         "id": "2811ceaac726f243",
         "type": "switch",
         "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
         "name": "Si <20Mb/s",
         "property": "payload.download.bandwidth*8/1000000",
         "propertyType": "jsonata",
@@ -137,8 +1174,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 570,
-        "y": 280,
+        "x": 390,
+        "y": 420,
         "wires": [
             [
                 "33e459f5b49c6a18"
@@ -149,49 +1186,16 @@
         "id": "fa8980c41453d441",
         "type": "file",
         "z": "f6f2187d.f17ca8",
-        "name": "Ecrit vers le log",
-        "filename": "/data_storage/log_internet_test.log",
+        "g": "3e85591c6b28eec5",
+        "name": "Ecrit vers le fichier log",
+        "filename": "/home/pi/Node-Red/Speedtest.log",
         "filenameType": "str",
         "appendNewline": true,
-        "createDir": false,
+        "createDir": true,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 700,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ab99bb39a27eee06",
-        "type": "speedtest",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "maxTime": 5000,
-        "serverId": "",
-        "x": 360,
-        "y": 280,
-        "wires": [
-            [
-                "2811ceaac726f243",
-                "8b89075617fd1890"
-            ]
-        ]
-    },
-    {
-        "id": "e90c0aba2c2dbf5b",
-        "type": "email-send",
-        "z": "f6f2187d.f17ca8",
-        "transport": "0ca1a15e29858943",
-        "from": "iot@clairealex.fr",
-        "to": "alexandre.moulart@clairealex.fr",
-        "cc": "alexandre.moulart@se.com",
-        "bcc": "",
-        "subject": "IOT : Connexion NET KO ou lente",
-        "contentType": "text",
-        "name": "",
-        "x": 710,
-        "y": 360,
+        "x": 740,
+        "y": 560,
         "wires": [
             []
         ]
@@ -200,6 +1204,7 @@
         "id": "8b89075617fd1890",
         "type": "change",
         "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
         "name": "Paramètre les données dans le log",
         "rules": [
             {
@@ -215,12 +1220,281 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "fa8980c41453d441",
+                "b0fe8155417905e8"
+            ]
+        ]
+    },
+    {
+        "id": "e90c0aba2c2dbf5b",
+        "type": "email-send",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "IOT : Connexion NET KO ou lente",
+        "contentType": "text",
+        "name": "Info Connexion KO",
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "b0fe8155417905e8"
+            ]
+        ]
+    },
+    {
+        "id": "ab99bb39a27eee06",
+        "type": "speedtest",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "",
+        "maxTime": 5000,
+        "serverId": "",
+        "acceptLicense": true,
+        "acceptGdpr": true,
+        "x": 180,
         "y": 420,
         "wires": [
             [
-                "fa8980c41453d441"
+                "2811ceaac726f243",
+                "8b89075617fd1890"
             ]
+        ]
+    },
+    {
+        "id": "b0fe8155417905e8",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Speedtest Log",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "99b24abfc303375b",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Counter",
+        "func": "// Define Variable and get stored flow value\n// if there is no stored value, then the value is 0\nvar counter = flow.get(\"counter\") || 0\n\n// Check the msg.topic property\n// If the topic is equal to reset then set the counter to 0\n// else add 1 to the counter value\nif (msg.topic == \"reset\") {\n    counter = 0\n} else {\n    counter ++\n}\n\n// save the counter value in the flow variable\nflow.set(\"counter\", counter)\n\n// set msg.payload to counter value\nmsg.payload = counter\n\n// return msg Object\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "acf7a47b6f6e79f6"
+            ]
+        ]
+    },
+    {
+        "id": "acf7a47b6f6e79f6",
+        "type": "switch",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Compteur supérieur à 3?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "e1d7c466b429a061",
+                "2d8b2236898a1199",
+                "33de0144ba188644"
+            ],
+            [
+                "ab99bb39a27eee06"
+            ]
+        ]
+    },
+    {
+        "id": "e1d7c466b429a061",
+        "type": "zigbee2mqtt-out",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "OFF Alim BOX",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "",
+        "device_id": [],
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 700,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2d8b2236898a1199",
+        "type": "delay",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 680,
+        "y": 320,
+        "wires": [
+            [
+                "22ac9e4da1fe5ebc"
+            ]
+        ]
+    },
+    {
+        "id": "22ac9e4da1fe5ebc",
+        "type": "zigbee2mqtt-out",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "ON Alim BOX",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "",
+        "device_id": [],
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "892f85fd.ddf898",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Récupération du fichier log",
+        "func": "msg.topic = \"Fichier log de test de la connexion internet\"; // email subject\n\nmsg.payload = \"Voir fichier attaché\"; // email body\n\nmsg.email = {\n    attachments: [\n        {\n            // file on disk as an attachment\n            filename: \"Speedtest.log\",\n            path: \"/home/pi/Node-Red/Speedtest.log\" // stream this file\n        },],\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 600,
+        "wires": [
+            [
+                "d821318e160c0e62"
+            ]
+        ]
+    },
+    {
+        "id": "5fb69172.b3471",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Envoi manuel du log",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "892f85fd.ddf898"
+            ]
+        ]
+    },
+    {
+        "id": "d821318e160c0e62",
+        "type": "email-send",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "Fichier LOG Test Connexions Internet NodeRed",
+        "contentType": "text",
+        "name": "Envoi Fichier log",
+        "x": 640,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33de0144ba188644",
+        "type": "email-send",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "Redémarrage de la connexion internet",
+        "contentType": "text",
+        "name": "Info reset de la connexion",
+        "x": 730,
+        "y": 360,
+        "wires": [
+            []
         ]
     },
     {
