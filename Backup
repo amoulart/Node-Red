@@ -22,12 +22,117 @@
         "info": ""
     },
     {
-        "id": "9a1437d70713dfd0",
-        "type": "tab",
-        "label": "Flux 1",
-        "disabled": false,
-        "info": "",
-        "env": []
+        "id": "7cc13ada.b6712c",
+        "type": "subflow",
+        "name": "timerange",
+        "info": "Lets through or blocks a payload\nbased on a time range. This can\neither be configured through the\nenviroment variables in the node ui\nor as described below with a message\nthat has an override topic.\nIf in range the msg will be passed\nto the first output and otherwise\nto the second.\nThe start and stop time needs\nto be defined in an hh:mm format.\nThere is also a week array. The week\nstarts on monday so 4 for example is\nThursday. Payload will only be passed\non days that are in the array.\nOut of time range payloads will\nbe redirected to the second output.\nThe schedule can be overriden by injecting\na message with the topic of \"override\"\nthat contains a ```msg.payload``` object with the\nkeys of \"start\",\"stop\",\"days\" like\nthis:\n```\n{\n    \"start\": \"10:00\",\n    \"stop\": \"14:00\",\n    \"days\": [\n        1,\n        2,\n        3,\n        4,\n        5,\n        6,\n        7\n    ]\n}\n```\nStart and stop need to be strings in the hh:mm\nformat and days an array of numbers as\ndescribed above.\nThe override can be deleted by injecting a\nmsg.payload string \"reset\".",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "da7f7d3f.da5af"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 620,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "694ce0e1.4bee58",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 620,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "694ce0e1.4bee58",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "start",
+                "type": "str",
+                "value": "00:00",
+                "ui": {
+                    "icon": "font-awesome/fa-arrow-right",
+                    "label": {
+                        "en-US": "from hh:mm"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "stop",
+                "type": "str",
+                "value": "00:00",
+                "ui": {
+                    "icon": "font-awesome/fa-circle",
+                    "label": {
+                        "en-US": "until hh:mm"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "days",
+                "type": "json",
+                "value": "[1,2,3,4,5,6,7]",
+                "ui": {
+                    "icon": "font-awesome/fa-calendar",
+                    "label": {
+                        "en-US": "days"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "json"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#C7E9C0",
+        "inputLabels": [
+            "payload input"
+        ],
+        "outputLabels": [
+            "in time range",
+            "out of time range"
+        ],
+        "icon": "node-red/switch.svg",
+        "status": {
+            "x": 480,
+            "y": 200,
+            "wires": [
+                {
+                    "id": "1bc56c04.ca0a3c",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "e102e7aa.73033",
@@ -49,8 +154,10 @@
             "62f42068.824698",
             "92e23916.20c6b"
         ],
-        "x": 64,
-        "y": 119
+        "x": 44,
+        "y": 119,
+        "w": 1102,
+        "h": 302
     },
     {
         "id": "3e85591c6b28eec5",
@@ -79,8 +186,8 @@
             "d821318e160c0e62",
             "33de0144ba188644"
         ],
-        "x": 14,
-        "y": 199,
+        "x": 34,
+        "y": 239,
         "w": 952,
         "h": 442
     },
@@ -96,8 +203,8 @@
             "558f9b7183aac2bc",
             "a4c57c169d5aacf3"
         ],
-        "x": 54,
-        "y": 59,
+        "x": 34,
+        "y": 19,
         "w": 492,
         "h": 82
     },
@@ -114,8 +221,8 @@
             "2f6110e39eb4ed78",
             "fa583c2e352ebefb"
         ],
-        "x": 54,
-        "y": 159,
+        "x": 34,
+        "y": 119,
         "w": 712,
         "h": 122
     },
@@ -140,12 +247,14 @@
             "5a300b5c8797c7d0",
             "b2c1c31135250f08",
             "391d39ebc14d49c7",
-            "85670a344f522997"
+            "85670a344f522997",
+            "37b283ee0e20393e",
+            "17bf05f535deb88e"
         ],
-        "x": 54,
-        "y": 299,
-        "w": 1272,
-        "h": 362
+        "x": 34,
+        "y": 259,
+        "w": 1332,
+        "h": 342
     },
     {
         "id": "89dc8d7d73b0afd3",
@@ -157,17 +266,15 @@
         },
         "nodes": [
             "967fa7eb7d450c61",
-            "793ac5cd61509991",
-            "a7ac1859d726211c",
-            "8b64d24335408877",
-            "7d42f86c20e1d96f",
-            "f0d704f8aace3b93",
             "5976452880a7a5dc",
-            "4fa85a3fc565a9ba"
+            "4fa85a3fc565a9ba",
+            "2693e72fb25c1949",
+            "65501524b171f0fb",
+            "32bf6e879c1b2732"
         ],
-        "x": 54,
-        "y": 679,
-        "w": 1132,
+        "x": 34,
+        "y": 619,
+        "w": 792,
         "h": 222
     },
     {
@@ -191,8 +298,8 @@
             "cb3c6bbbf342522c",
             "144c1d82ed799493"
         ],
-        "x": 54,
-        "y": 919,
+        "x": 34,
+        "y": 859,
         "w": 832,
         "h": 342
     },
@@ -220,6 +327,82 @@
         "proxy": ""
     },
     {
+        "id": "694ce0e1.4bee58",
+        "type": "function",
+        "z": "7cc13ada.b6712c",
+        "name": "is in range?",
+        "func": "const schedule = flow.get(\"schedule\");\nlet start = env.get(\"start\");\nlet stop = env.get(\"stop\");\nlet days = env.get(\"days\");\nif(schedule !== undefined){\n    start = schedule.start;\n    stop = schedule.stop;\n    days = schedule.days;\n}\nconst time = new Date();\nlet day = time.getDay();\nif(day === 0) day = 7;\nlet hour = String(time.getHours());\nlet minute = String(time.getMinutes());\nif(hour.length == 1) hour = \"0\" + hour;\nif(minute.length == 1) minute = \"0\" + minute;\nconst hmtime = hour + \":\" + minute;\nif(days.includes(day)){\n    if(start == stop){\n        return [msg, null];\n    } else if(start > stop){\n        if(hmtime >= start || hmtime < stop){\n            return [msg, null];\n        } else {\n            return [null, msg];\n        }\n    } else if(hmtime >= start && hmtime < stop){\n        return [msg, null];\n    } else {\n        return [null, msg];\n    }\n} else {\n    return null;\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "94dc9c00.0f576",
+        "type": "inject",
+        "z": "7cc13ada.b6712c",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "1bc56c04.ca0a3c"
+            ]
+        ]
+    },
+    {
+        "id": "1bc56c04.ca0a3c",
+        "type": "function",
+        "z": "7cc13ada.b6712c",
+        "name": "display rule",
+        "func": "const schedule = flow.get(\"schedule\");\nif(typeof schedule == \"object\"){\n    const start = schedule.start;\n    const stop = schedule.stop;\n    const days = String(schedule.days).replace(/1/g,\"Mo\").replace(/2/g,\"Tu\").replace(/3/g,\"We\").replace(/4/g,\"Th\").replace(/5/g,\"Fr\").replace(/6/g,\"Sa\").replace(/7/g,\"Su\");\n    msg.payload = \"override: \" + start + \"-\" + stop + \"/\" + days;\n} else {\n    const start = env.get(\"start\");\n    const stop = env.get(\"stop\");\n    const days = String(env.get(\"days\")).replace(/1/g,\"Mo\").replace(/2/g,\"Tu\").replace(/3/g,\"We\").replace(/4/g,\"Th\").replace(/5/g,\"Fr\").replace(/6/g,\"Sa\").replace(/7/g,\"Su\");\n    const override = false;\n    msg.payload = start + \"-\" + stop + \"/\" + days;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da7f7d3f.da5af",
+        "type": "function",
+        "z": "7cc13ada.b6712c",
+        "name": "check for override",
+        "func": "if(msg.topic == \"override\"){\n    flow.set(\"schedule\",msg.payload);\n    return [null, msg];\n} else if (msg.payload == \"reset\"){\n    let reset;\n    flow.set(\"schedule\",reset);\n    return [null, msg];\n} else {\n    return [msg, null];\n}",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "694ce0e1.4bee58"
+            ],
+            [
+                "1bc56c04.ca0a3c"
+            ]
+        ]
+    },
+    {
         "id": "a4c57c169d5aacf3",
         "type": "zigbee2mqtt-bridge",
         "z": "8a78fc9bf03685af",
@@ -227,8 +410,8 @@
         "name": "",
         "server": "18c1bbfb6a2451d9",
         "topic": null,
-        "x": 170,
-        "y": 100,
+        "x": 150,
+        "y": 60,
         "wires": [
             [
                 "558f9b7183aac2bc"
@@ -248,8 +431,8 @@
         "outputAtStartup": true,
         "filterChanges": false,
         "enableMultiple": false,
-        "x": 180,
-        "y": 200,
+        "x": 160,
+        "y": 160,
         "wires": [
             [
                 "2f6110e39eb4ed78",
@@ -272,8 +455,8 @@
         "payloadType": "msg",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 600,
-        "y": 200,
+        "x": 580,
+        "y": 160,
         "wires": []
     },
     {
@@ -289,8 +472,8 @@
         "outputAtStartup": true,
         "filterChanges": true,
         "enableMultiple": false,
-        "x": 230,
-        "y": 360,
+        "x": 210,
+        "y": 320,
         "wires": [
             [
                 "85670a344f522997",
@@ -311,8 +494,8 @@
         "outputAtStartup": true,
         "filterChanges": true,
         "enableMultiple": false,
-        "x": 240,
-        "y": 400,
+        "x": 220,
+        "y": 360,
         "wires": [
             [
                 "85670a344f522997",
@@ -327,7 +510,7 @@
         "g": "88283a1bd84fdbce",
         "name": "",
         "pauseType": "delay",
-        "timeout": "30",
+        "timeout": "60",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -338,8 +521,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 700,
-        "y": 420,
+        "x": 680,
+        "y": 380,
         "wires": [
             [
                 "25a9d013c63a9aaf"
@@ -366,11 +549,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 420,
+        "x": 940,
+        "y": 380,
         "wires": [
             [
-                "b2a6e10e71fecbe4"
+                "37b283ee0e20393e"
             ]
         ]
     },
@@ -392,8 +575,8 @@
         "topic": "",
         "payload": "25",
         "payloadType": "num",
-        "x": 230,
-        "y": 540,
+        "x": 210,
+        "y": 500,
         "wires": [
             [
                 "341197126f350c5d"
@@ -415,8 +598,8 @@
         "payloadType": "msg",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 1200,
-        "y": 400,
+        "x": 1180,
+        "y": 500,
         "wires": []
     },
     {
@@ -434,8 +617,8 @@
         "payloadType": "num",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 480,
-        "y": 540,
+        "x": 460,
+        "y": 500,
         "wires": []
     },
     {
@@ -456,8 +639,8 @@
         "topic": "",
         "payload": "255",
         "payloadType": "num",
-        "x": 230,
-        "y": 620,
+        "x": 210,
+        "y": 560,
         "wires": [
             [
                 "53a0c6fe363eab8b"
@@ -479,8 +662,8 @@
         "payloadType": "num",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 480,
-        "y": 620,
+        "x": 460,
+        "y": 560,
         "wires": []
     },
     {
@@ -506,8 +689,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 690,
-        "y": 340,
+        "x": 670,
+        "y": 300,
         "wires": [
             [
                 "391d39ebc14d49c7"
@@ -537,12 +720,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 380,
+        "x": 950,
+        "y": 340,
         "wires": [
             [
-                "b2a6e10e71fecbe4",
-                "af162e119d899f79"
+                "af162e119d899f79",
+                "37b283ee0e20393e"
             ]
         ]
     },
@@ -564,8 +747,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 920,
-        "y": 340,
+        "x": 900,
+        "y": 300,
         "wires": [
             [
                 "b2c1c31135250f08"
@@ -586,8 +769,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 680,
-        "y": 480,
+        "x": 560,
+        "y": 440,
         "wires": []
     },
     {
@@ -599,70 +782,16 @@
         "server": "18c1bbfb6a2451d9",
         "friendly_name": "Detecteur poubelles (E1525/E1745)",
         "device_id": "0x842e14fffe8d8729",
-        "state": "0",
+        "state": "occupancy",
         "outputAtStartup": true,
         "filterChanges": true,
         "enableMultiple": false,
-        "x": 220,
-        "y": 720,
+        "x": 200,
+        "y": 740,
         "wires": [
             [
                 "4fa85a3fc565a9ba",
-                "7d42f86c20e1d96f"
-            ]
-        ]
-    },
-    {
-        "id": "8b64d24335408877",
-        "type": "delay",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "120",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 510,
-        "y": 800,
-        "wires": [
-            [
-                "793ac5cd61509991"
-            ]
-        ]
-    },
-    {
-        "id": "793ac5cd61509991",
-        "type": "change",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "EXTINCTION",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OFF",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 800,
-        "wires": [
-            [
-                "967fa7eb7d450c61"
+                "65501524b171f0fb"
             ]
         ]
     },
@@ -671,108 +800,19 @@
         "type": "zigbee2mqtt-out",
         "z": "8a78fc9bf03685af",
         "g": "89dc8d7d73b0afd3",
-        "name": "",
+        "name": "Allumage",
         "server": "18c1bbfb6a2451d9",
         "friendly_name": "Lampe poubelle (LED1836G9)",
         "device_id": "0x842e14fffe4d96de",
         "command": "state",
         "commandType": "z2m_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
+        "payload": "ON",
+        "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 1030,
-        "y": 780,
+        "x": 700,
+        "y": 700,
         "wires": []
-    },
-    {
-        "id": "7d42f86c20e1d96f",
-        "type": "switch",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "Si Présence",
-        "property": "payload.occupancy",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "true",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "false",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 490,
-        "y": 720,
-        "wires": [
-            [
-                "f0d704f8aace3b93"
-            ],
-            [
-                "793ac5cd61509991"
-            ]
-        ]
-    },
-    {
-        "id": "a7ac1859d726211c",
-        "type": "change",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "ALLUMAGE",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ON",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 760,
-        "wires": [
-            [
-                "967fa7eb7d450c61",
-                "8b64d24335408877"
-            ]
-        ]
-    },
-    {
-        "id": "f0d704f8aace3b93",
-        "type": "switch",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "Si luminosité forte (journée)",
-        "property": "payload.illuminance_above_threshold",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "false",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 720,
-        "y": 720,
-        "wires": [
-            [
-                "a7ac1859d726211c"
-            ]
-        ]
     },
     {
         "id": "4fa85a3fc565a9ba",
@@ -788,8 +828,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 480,
-        "y": 860,
+        "x": 660,
+        "y": 800,
         "wires": []
     },
     {
@@ -806,8 +846,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 100,
+        "x": 410,
+        "y": 60,
         "wires": []
     },
     {
@@ -815,7 +855,7 @@
         "type": "debug",
         "z": "8a78fc9bf03685af",
         "g": "5f2614821fc98646",
-        "name": "Eclairage chembre parents",
+        "name": "Eclairage chambre parents",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -824,8 +864,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 240,
+        "x": 480,
+        "y": 200,
         "wires": []
     },
     {
@@ -841,8 +881,8 @@
         "outputAtStartup": true,
         "filterChanges": false,
         "enableMultiple": false,
-        "x": 230,
-        "y": 960,
+        "x": 190,
+        "y": 900,
         "wires": [
             [
                 "737c6e426a364559"
@@ -867,8 +907,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 570,
-        "y": 1060,
+        "x": 550,
+        "y": 1000,
         "wires": [
             [
                 "2b7284cce37ba6de"
@@ -890,8 +930,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 780,
-        "y": 960,
+        "x": 760,
+        "y": 900,
         "wires": []
     },
     {
@@ -917,8 +957,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 380,
-        "y": 1000,
+        "x": 360,
+        "y": 940,
         "wires": [
             [
                 "2b7284cce37ba6de"
@@ -944,8 +984,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 580,
-        "y": 1020,
+        "x": 560,
+        "y": 960,
         "wires": []
     },
     {
@@ -960,8 +1000,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 180,
-        "y": 1100,
+        "x": 160,
+        "y": 1040,
         "wires": [
             [
                 "98d5b6f6b6c06c65",
@@ -981,8 +1021,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 190,
-        "y": 1140,
+        "x": 170,
+        "y": 1080,
         "wires": [
             [
                 "98d5b6f6b6c06c65",
@@ -1008,8 +1048,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 570,
-        "y": 1160,
+        "x": 550,
+        "y": 1100,
         "wires": [
             [
                 "2b7284cce37ba6de"
@@ -1031,8 +1071,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 580,
-        "y": 1120,
+        "x": 560,
+        "y": 1060,
         "wires": []
     },
     {
@@ -1047,8 +1087,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 1180,
+        "x": 130,
+        "y": 1120,
         "wires": [
             [
                 "98d5b6f6b6c06c65",
@@ -1068,14 +1108,142 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 150,
-        "y": 1220,
+        "x": 130,
+        "y": 1160,
         "wires": [
             [
                 "98d5b6f6b6c06c65",
                 "011462622c106d5f"
             ]
         ]
+    },
+    {
+        "id": "2693e72fb25c1949",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "Extinction",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampe poubelle (LED1836G9)",
+        "device_id": "0x842e14fffe4d96de",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "OFF",
+        "payloadType": "str",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 700,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "65501524b171f0fb",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "Si Présence",
+        "property": "payload.occupancy",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 720,
+        "wires": [
+            [
+                "967fa7eb7d450c61",
+                "32bf6e879c1b2732"
+            ],
+            [
+                "2693e72fb25c1949"
+            ]
+        ]
+    },
+    {
+        "id": "32bf6e879c1b2732",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "89dc8d7d73b0afd3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "60",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 540,
+        "y": 660,
+        "wires": [
+            [
+                "2693e72fb25c1949"
+            ]
+        ]
+    },
+    {
+        "id": "37b283ee0e20393e",
+        "type": "subflow:7cc13ada.b6712c",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Tard?",
+        "env": [
+            {
+                "name": "start",
+                "value": "22:30",
+                "type": "str"
+            },
+            {
+                "name": "stop",
+                "value": "7:00",
+                "type": "str"
+            }
+        ],
+        "x": 910,
+        "y": 520,
+        "wires": [
+            [
+                "17bf05f535deb88e"
+            ],
+            [
+                "b2a6e10e71fecbe4"
+            ]
+        ]
+    },
+    {
+        "id": "17bf05f535deb88e",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Lampe Escalier 2 (LED1836G9)",
+        "device_id": "0x842e14fffe88a3a9",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "payload",
+        "payloadType": "msg",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1210,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "3cc11d24.ff01a2",
@@ -1109,8 +1277,8 @@
         "topic": "reset",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 240,
+        "x": 170,
+        "y": 280,
         "wires": [
             [
                 "99b24abfc303375b"
@@ -1147,8 +1315,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 440,
-        "y": 460,
+        "x": 460,
+        "y": 500,
         "wires": [
             [
                 "e90c0aba2c2dbf5b",
@@ -1174,8 +1342,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 390,
-        "y": 420,
+        "x": 410,
+        "y": 460,
         "wires": [
             [
                 "33e459f5b49c6a18"
@@ -1194,8 +1362,8 @@
         "createDir": true,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 740,
-        "y": 560,
+        "x": 760,
+        "y": 600,
         "wires": [
             []
         ]
@@ -1220,8 +1388,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
-        "y": 500,
+        "x": 480,
+        "y": 540,
         "wires": [
             [
                 "fa8980c41453d441",
@@ -1242,8 +1410,8 @@
         "subject": "IOT : Connexion NET KO ou lente",
         "contentType": "text",
         "name": "Info Connexion KO",
-        "x": 710,
-        "y": 460,
+        "x": 730,
+        "y": 500,
         "wires": [
             [
                 "b0fe8155417905e8"
@@ -1260,8 +1428,8 @@
         "serverId": "",
         "acceptLicense": true,
         "acceptGdpr": true,
-        "x": 180,
-        "y": 420,
+        "x": 200,
+        "y": 460,
         "wires": [
             [
                 "2811ceaac726f243",
@@ -1283,8 +1451,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 520,
+        "x": 780,
+        "y": 560,
         "wires": []
     },
     {
@@ -1300,8 +1468,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 320,
+        "x": 200,
+        "y": 360,
         "wires": [
             [
                 "acf7a47b6f6e79f6"
@@ -1331,8 +1499,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 390,
-        "y": 320,
+        "x": 410,
+        "y": 360,
         "wires": [
             [
                 "e1d7c466b429a061",
@@ -1359,8 +1527,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 700,
-        "y": 260,
+        "x": 720,
+        "y": 300,
         "wires": []
     },
     {
@@ -1381,8 +1549,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 680,
-        "y": 320,
+        "x": 700,
+        "y": 360,
         "wires": [
             [
                 "22ac9e4da1fe5ebc"
@@ -1404,8 +1572,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 860,
-        "y": 320,
+        "x": 880,
+        "y": 360,
         "wires": []
     },
     {
@@ -1421,8 +1589,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 600,
+        "x": 400,
+        "y": 640,
         "wires": [
             [
                 "d821318e160c0e62"
@@ -1451,8 +1619,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
-        "y": 600,
+        "x": 170,
+        "y": 640,
         "wires": [
             [
                 "892f85fd.ddf898"
@@ -1472,8 +1640,8 @@
         "subject": "Fichier LOG Test Connexions Internet NodeRed",
         "contentType": "text",
         "name": "Envoi Fichier log",
-        "x": 640,
-        "y": 600,
+        "x": 660,
+        "y": 640,
         "wires": [
             []
         ]
@@ -1491,8 +1659,8 @@
         "subject": "Redémarrage de la connexion internet",
         "contentType": "text",
         "name": "Info reset de la connexion",
-        "x": 730,
-        "y": 360,
+        "x": 750,
+        "y": 400,
         "wires": [
             []
         ]
@@ -1511,7 +1679,7 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 440,
+        "x": 420,
         "y": 160,
         "wires": [
             [
@@ -1541,7 +1709,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
+        "x": 170,
         "y": 160,
         "wires": [
             [
@@ -1563,7 +1731,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
+        "x": 1000,
         "y": 200,
         "wires": []
     },
@@ -1576,7 +1744,7 @@
         "property": "payload",
         "attr": "",
         "chr": "",
-        "x": 270,
+        "x": 250,
         "y": 220,
         "wires": [
             [
@@ -1595,7 +1763,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 460,
+        "x": 440,
         "y": 220,
         "wires": [
             [
@@ -1620,7 +1788,7 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 750,
+        "x": 730,
         "y": 240,
         "wires": [
             [
@@ -1642,7 +1810,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
+        "x": 1000,
         "y": 240,
         "wires": []
     },
@@ -1653,7 +1821,7 @@
         "g": "e102e7aa.73033",
         "name": "Fonctionnement",
         "info": "Régulièrement l'IPX se dé-synchronise du serveur de temps.\nEn conséquence les tâches planifiées ne s'effectuent plus. Seul un redémarrage de l'IPX peut corriger le problème.\n\nLe flow se connecte à l'IPX et récupère le fichier status.xml contenant tous les états/compteurs de l'IPX ainsi que la valeur de son horloge. En fonction de cette valeur, il lance ou pas un redémarrage en se connectant à la page http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3\nIl vérifie que l'année de la date renvoyée par le fichier xml est bien celle de l'année en cours ce qui montre que l'IPX800 est bien synchronisée.",
-        "x": 180,
+        "x": 160,
         "y": 280,
         "wires": []
     },
@@ -1667,7 +1835,7 @@
             "6b83445f.95ef74"
         ],
         "uncaught": false,
-        "x": 350,
+        "x": 330,
         "y": 380,
         "wires": [
             [
@@ -1687,7 +1855,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
+        "x": 710,
         "y": 380,
         "wires": [
             []
