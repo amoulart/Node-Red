@@ -1320,7 +1320,6 @@
         "y": 500,
         "wires": [
             [
-                "e90c0aba2c2dbf5b",
                 "a56be7fea2f10b19"
             ]
         ]
@@ -1330,7 +1329,7 @@
         "type": "switch",
         "z": "f6f2187d.f17ca8",
         "g": "3e85591c6b28eec5",
-        "name": "Si <20Mb/s",
+        "name": "Si <45Mb/s",
         "property": "payload.download.bandwidth*8/1000000",
         "propertyType": "jsonata",
         "rules": [
