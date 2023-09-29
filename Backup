@@ -155,9 +155,7 @@
             "92e23916.20c6b"
         ],
         "x": 44,
-        "y": 119,
-        "w": 1102,
-        "h": 302
+        "y": 119
     },
     {
         "id": "3e85591c6b28eec5",
@@ -184,7 +182,10 @@
             "5fb69172.b3471",
             "892f85fd.ddf898",
             "d821318e160c0e62",
-            "33de0144ba188644"
+            "33de0144ba188644",
+            "a56be7fea2f10b19",
+            "485a7a75bd474437",
+            "9dade99a33b4458d"
         ],
         "x": 34,
         "y": 239,
@@ -1320,7 +1321,7 @@
         "wires": [
             [
                 "e90c0aba2c2dbf5b",
-                "99b24abfc303375b"
+                "a56be7fea2f10b19"
             ]
         ]
     },
@@ -1335,7 +1336,7 @@
         "rules": [
             {
                 "t": "lt",
-                "v": "20",
+                "v": "45",
                 "vt": "str"
             }
         ],
@@ -1461,7 +1462,7 @@
         "z": "f6f2187d.f17ca8",
         "g": "3e85591c6b28eec5",
         "name": "Counter",
-        "func": "// Define Variable and get stored flow value\n// if there is no stored value, then the value is 0\nvar counter = flow.get(\"counter\") || 0\n\n// Check the msg.topic property\n// If the topic is equal to reset then set the counter to 0\n// else add 1 to the counter value\nif (msg.topic == \"reset\") {\n    counter = 0\n} else {\n    counter ++\n}\n\n// save the counter value in the flow variable\nflow.set(\"counter\", counter)\n\n// set msg.payload to counter value\nmsg.payload = counter\n\n// return msg Object\nreturn msg;",
+        "func": "// Define Variable and get stored flow value\n// if there is no stored value, then the value is 0\nvar counter = flow.get(\"counter\") || 0\n\n// Check the msg.topic property\n// If the topic is equal to reset then set the counter to 0\n// else add 1 to the counter value\nif (msg.topic == \"reset\") {\n    counter = 0\n    msg.topic = \"\"\n} else {\n    counter ++\n}\n\n// save the counter value in the flow variable\nflow.set(\"counter\", counter)\n\n// set msg.payload to counter value\nmsg.payload = counter\n\n// return msg Object\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1472,7 +1473,8 @@
         "y": 360,
         "wires": [
             [
-                "acf7a47b6f6e79f6"
+                "acf7a47b6f6e79f6",
+                "485a7a75bd474437"
             ]
         ]
     },
@@ -1505,7 +1507,7 @@
             [
                 "e1d7c466b429a061",
                 "2d8b2236898a1199",
-                "33de0144ba188644"
+                "9dade99a33b4458d"
             ],
             [
                 "ab99bb39a27eee06"
@@ -1519,8 +1521,8 @@
         "g": "3e85591c6b28eec5",
         "name": "OFF Alim BOX",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "",
-        "device_id": [],
+        "friendly_name": "Alim box internet (E1603/E1702/E1708)",
+        "device_id": "0x385b44fffee335eb",
         "command": "state",
         "commandType": "z2m_cmd",
         "payload": "off",
@@ -1564,8 +1566,8 @@
         "g": "3e85591c6b28eec5",
         "name": "ON Alim BOX",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "",
-        "device_id": [],
+        "friendly_name": "Alim box internet (E1603/E1702/E1708)",
+        "device_id": "0x385b44fffee335eb",
         "command": "state",
         "commandType": "z2m_cmd",
         "payload": "on",
@@ -1659,10 +1661,80 @@
         "subject": "Redémarrage de la connexion internet",
         "contentType": "text",
         "name": "Info reset de la connexion",
-        "x": 750,
+        "x": 830,
         "y": 400,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a56be7fea2f10b19",
+        "type": "delay",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 460,
+        "wires": [
+            [
+                "99b24abfc303375b"
+            ]
+        ]
+    },
+    {
+        "id": "485a7a75bd474437",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "debug counter",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9dade99a33b4458d",
+        "type": "delay",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 640,
+        "y": 400,
+        "wires": [
+            [
+                "33de0144ba188644"
+            ]
         ]
     },
     {
