@@ -8,6 +8,13 @@
         "env": []
     },
     {
+        "id": "f4db60bf.7cb8c",
+        "type": "tab",
+        "label": "AUTOMATISMES MAISON",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "f6f2187d.f17ca8",
         "type": "tab",
         "label": "TEST CONNEXION INTERNET",
@@ -15,11 +22,12 @@
         "info": ""
     },
     {
-        "id": "f4db60bf.7cb8c",
+        "id": "65ffe8411dc40a28",
         "type": "tab",
-        "label": "AUTOMATISMES MAISON",
+        "label": "IHM",
         "disabled": false,
-        "info": ""
+        "info": "",
+        "env": []
     },
     {
         "id": "7cc13ada.b6712c",
@@ -40,7 +48,7 @@
         ],
         "out": [
             {
-                "x": 620,
+                "x": 730,
                 "y": 60,
                 "wires": [
                     {
@@ -50,7 +58,7 @@
                 ]
             },
             {
-                "x": 620,
+                "x": 750,
                 "y": 140,
                 "wires": [
                     {
@@ -152,10 +160,14 @@
             "688d8710.dd2ff8",
             "3443a94b.1d3d2e",
             "62f42068.824698",
-            "92e23916.20c6b"
+            "efce1de91fa4997e",
+            "17e782a82a4b9951",
+            "c5d80b6f1efa0795"
         ],
         "x": 44,
-        "y": 119
+        "y": 99,
+        "w": 1102,
+        "h": 302
     },
     {
         "id": "3e85591c6b28eec5",
@@ -171,8 +183,6 @@
             "2811ceaac726f243",
             "fa8980c41453d441",
             "8b89075617fd1890",
-            "e90c0aba2c2dbf5b",
-            "ab99bb39a27eee06",
             "b0fe8155417905e8",
             "99b24abfc303375b",
             "acf7a47b6f6e79f6",
@@ -185,11 +195,13 @@
             "33de0144ba188644",
             "a56be7fea2f10b19",
             "485a7a75bd474437",
-            "9dade99a33b4458d"
+            "9dade99a33b4458d",
+            "2cc8d9f2b5261b88",
+            "297032eb92ecd6c7"
         ],
         "x": 34,
         "y": 239,
-        "w": 952,
+        "w": 1012,
         "h": 442
     },
     {
@@ -219,13 +231,12 @@
         },
         "nodes": [
             "476a22d8152cdc57",
-            "2f6110e39eb4ed78",
-            "fa583c2e352ebefb"
+            "2f6110e39eb4ed78"
         ],
         "x": 34,
         "y": 119,
         "w": 712,
-        "h": 122
+        "h": 82
     },
     {
         "id": "88283a1bd84fdbce",
@@ -237,46 +248,26 @@
         },
         "nodes": [
             "88825c69e6b4406d",
-            "d9dcb29b79a10e9b",
             "af162e119d899f79",
-            "25a9d013c63a9aaf",
-            "d6c518aaab31fad7",
-            "b2a6e10e71fecbe4",
-            "341197126f350c5d",
-            "2b0affa0c70bef38",
-            "53a0c6fe363eab8b",
             "5a300b5c8797c7d0",
-            "b2c1c31135250f08",
-            "391d39ebc14d49c7",
-            "85670a344f522997",
             "37b283ee0e20393e",
-            "17bf05f535deb88e"
+            "57c87b30ea80eb7d",
+            "295508e9a9ce09a4",
+            "a85b5f67307b8161",
+            "6a1892cf4bad0282",
+            "93b147a291c3d018",
+            "435674ee8c87c7ab",
+            "66425afb1daa7ceb",
+            "64948b6192e1a842",
+            "dd708280f510e18d",
+            "b2402425e85a3343",
+            "3e3e85f5c73f6e26",
+            "3f38713c68d50bb2"
         ],
         "x": 34,
         "y": 259,
-        "w": 1332,
-        "h": 342
-    },
-    {
-        "id": "89dc8d7d73b0afd3",
-        "type": "group",
-        "z": "8a78fc9bf03685af",
-        "name": "Gestion Eclairage poubelle",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "967fa7eb7d450c61",
-            "5976452880a7a5dc",
-            "4fa85a3fc565a9ba",
-            "2693e72fb25c1949",
-            "65501524b171f0fb",
-            "32bf6e879c1b2732"
-        ],
-        "x": 34,
-        "y": 619,
-        "w": 792,
-        "h": 222
+        "w": 1272,
+        "h": 282
     },
     {
         "id": "ab3eeb9e267c29b8",
@@ -305,6 +296,106 @@
         "h": 342
     },
     {
+        "id": "789a50f3d570c165",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Gestionde l'éclairage du local poubelle",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "66a58e98ab6037f0",
+            "89dc8d7d73b0afd3"
+        ],
+        "x": 34,
+        "y": 559,
+        "w": 798,
+        "h": 288
+    },
+    {
+        "id": "0ba7747e986083a3",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "name": "Alarme en cas de porte de garage ouverte",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ffb8606e191cb99a",
+            "bedf15845d296d13",
+            "826f7d5e1fc85642",
+            "7de5ae9a9d52000f",
+            "209090ef89acf2dc",
+            "d5a40fae7544f80f",
+            "1a0f490f1de11989",
+            "0115839daf416040"
+        ],
+        "x": 34,
+        "y": 1219,
+        "w": 852,
+        "h": 242
+    },
+    {
+        "id": "fc4d7b3fdd8d7679",
+        "type": "group",
+        "z": "f4db60bf.7cb8c",
+        "name": "Gestion de la VMC depuis l'interface graphique",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "d2078e7f42f83fab",
+            "f092e4a5d029bf7b",
+            "50394144fc93b9f8",
+            "f397b3f6b00f7f22",
+            "6afd16dff8838a28",
+            "1e50c7ad7ff0d555",
+            "df143cacff2c7957",
+            "8604f49a62d71f9e",
+            "ebe9de659eb140f6",
+            "2bbfe52978827116",
+            "ca51220c7773961b",
+            "023f313706e7a9fa",
+            "bb1454896d323f87",
+            "ce5f1220964693af",
+            "2b4726a6dc8fcca0",
+            "25af6e728ace967b",
+            "157a01391cd115ec",
+            "9d4f0fbfb10d04eb",
+            "6c87992a08a06a2b",
+            "b6c0fe1f96500599",
+            "da008f54901cc831",
+            "519ba4bd573e4d7f",
+            "86e002b53ef1ea4e",
+            "eaac69e4ea61fa96",
+            "225715f1fb62950d"
+        ],
+        "x": 34,
+        "y": 439,
+        "w": 1352,
+        "h": 602
+    },
+    {
+        "id": "89dc8d7d73b0afd3",
+        "type": "group",
+        "z": "8a78fc9bf03685af",
+        "g": "789a50f3d570c165",
+        "name": "Gestion Eclairage poubelle",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "967fa7eb7d450c61",
+            "2693e72fb25c1949",
+            "65501524b171f0fb",
+            "32bf6e879c1b2732"
+        ],
+        "x": 414,
+        "y": 639,
+        "w": 392,
+        "h": 182
+    },
+    {
         "id": "18c1bbfb6a2451d9",
         "type": "zigbee2mqtt-server",
         "name": "",
@@ -328,6 +419,164 @@
         "proxy": ""
     },
     {
+        "id": "439c3a08b11e4e0a",
+        "type": "nexmobasic"
+    },
+    {
+        "id": "b59efa9e8f72d15f",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "navigationStyle": "icon",
+        "titleBarStyle": "fixed"
+    },
+    {
+        "id": "58e58d4fa71b866e",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "2eeb3343c322a411",
+        "type": "ui-page",
+        "name": "Accueil",
+        "ui": "b59efa9e8f72d15f",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "58e58d4fa71b866e",
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": "false"
+    },
+    {
+        "id": "547688a99e375b86",
+        "type": "ui-group",
+        "name": "TEst",
+        "page": "2eeb3343c322a411",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e6a0e1b12ca31e61",
+        "type": "ui-page",
+        "name": "Garage",
+        "ui": "b59efa9e8f72d15f",
+        "path": "/page2",
+        "icon": "garage",
+        "layout": "grid",
+        "theme": "58e58d4fa71b866e",
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "3dd7d881c3faec6d",
+        "type": "ui-page",
+        "name": "NIPTO",
+        "ui": "b59efa9e8f72d15f",
+        "path": "/page3",
+        "icon": "vacuum",
+        "layout": "grid",
+        "theme": "58e58d4fa71b866e",
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e62785c5482a6a77",
+        "type": "ui-page",
+        "name": "Zigbee",
+        "ui": "b59efa9e8f72d15f",
+        "path": "/page4",
+        "icon": "zigbee",
+        "layout": "grid",
+        "theme": "58e58d4fa71b866e",
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "da9cf49dfda27873",
+        "type": "ui-group",
+        "name": "My Group",
+        "page": "e6a0e1b12ca31e61",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0a20da69df34fa5a",
+        "type": "ui-page",
+        "name": "VMC",
+        "ui": "b59efa9e8f72d15f",
+        "path": "/page5",
+        "icon": "fan",
+        "layout": "grid",
+        "theme": "58e58d4fa71b866e",
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": "false"
+    },
+    {
+        "id": "e8bf7ab13ad9d896",
+        "type": "ui-group",
+        "name": "Commander la ventilation",
+        "page": "0a20da69df34fa5a",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "abe219b4d55df21f",
+        "type": "ui-group",
+        "name": "Etat de la ventilation",
+        "page": "0a20da69df34fa5a",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
         "id": "694ce0e1.4bee58",
         "type": "function",
         "z": "7cc13ada.b6712c",
@@ -342,8 +591,12 @@
         "x": 450,
         "y": 100,
         "wires": [
-            [],
-            []
+            [
+                "05c6e82c22096149"
+            ],
+            [
+                "05c6e82c22096149"
+            ]
         ]
     },
     {
@@ -351,6 +604,15 @@
         "type": "inject",
         "z": "7cc13ada.b6712c",
         "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": true,
@@ -404,6 +666,23 @@
         ]
     },
     {
+        "id": "05c6e82c22096149",
+        "type": "debug",
+        "z": "7cc13ada.b6712c",
+        "name": "TimeRange",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 300,
+        "wires": []
+    },
+    {
         "id": "a4c57c169d5aacf3",
         "type": "zigbee2mqtt-bridge",
         "z": "8a78fc9bf03685af",
@@ -436,8 +715,7 @@
         "y": 160,
         "wires": [
             [
-                "2f6110e39eb4ed78",
-                "fa583c2e352ebefb"
+                "2f6110e39eb4ed78"
             ]
         ]
     },
@@ -467,39 +745,16 @@
         "g": "88283a1bd84fdbce",
         "name": "",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Detecteur palier (E1525/E1745)",
-        "device_id": "0x680ae2fffe161575",
+        "friendly_name": "Detecteur Escalier A (SNZB-03)",
+        "device_id": "0x00124b002511d318",
         "state": "0",
-        "outputAtStartup": true,
-        "filterChanges": true,
+        "outputAtStartup": false,
+        "filterChanges": false,
         "enableMultiple": false,
-        "x": 210,
-        "y": 320,
+        "x": 190,
+        "y": 340,
         "wires": [
             [
-                "85670a344f522997",
-                "5a300b5c8797c7d0"
-            ]
-        ]
-    },
-    {
-        "id": "d9dcb29b79a10e9b",
-        "type": "zigbee2mqtt-in",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "",
-        "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Detecteur escalier (E1525/E1745)",
-        "device_id": "0x842e14fffe4369dc",
-        "state": "0",
-        "outputAtStartup": true,
-        "filterChanges": true,
-        "enableMultiple": false,
-        "x": 220,
-        "y": 360,
-        "wires": [
-            [
-                "85670a344f522997",
                 "5a300b5c8797c7d0"
             ]
         ]
@@ -511,8 +766,8 @@
         "g": "88283a1bd84fdbce",
         "name": "",
         "pauseType": "delay",
-        "timeout": "60",
-        "timeoutUnits": "seconds",
+        "timeout": "2",
+        "timeoutUnits": "minutes",
         "rate": "1",
         "nbRateUnits": "1",
         "rateUnits": "second",
@@ -522,150 +777,16 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 680,
-        "y": 380,
+        "x": 800,
+        "y": 460,
         "wires": [
             [
-                "25a9d013c63a9aaf"
+                "6a1892cf4bad0282",
+                "435674ee8c87c7ab",
+                "93b147a291c3d018",
+                "66425afb1daa7ceb"
             ]
         ]
-    },
-    {
-        "id": "25a9d013c63a9aaf",
-        "type": "change",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "EXTINCTION",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "OFF",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 380,
-        "wires": [
-            [
-                "37b283ee0e20393e"
-            ]
-        ]
-    },
-    {
-        "id": "d6c518aaab31fad7",
-        "type": "inject",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "Baisse luminosite le soir 21:30",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "30 21 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "25",
-        "payloadType": "num",
-        "x": 210,
-        "y": 500,
-        "wires": [
-            [
-                "341197126f350c5d"
-            ]
-        ]
-    },
-    {
-        "id": "b2a6e10e71fecbe4",
-        "type": "zigbee2mqtt-out",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "",
-        "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampes_Escalier 0 a 1",
-        "device_id": "0",
-        "command": "state",
-        "commandType": "z2m_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
-        "optionsValue": "",
-        "optionsType": "nothing",
-        "x": 1180,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "341197126f350c5d",
-        "type": "zigbee2mqtt-out",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "",
-        "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampes_Escalier 0 a 1",
-        "device_id": "0",
-        "command": "brightness",
-        "commandType": "z2m_cmd",
-        "payload": "30",
-        "payloadType": "num",
-        "optionsValue": "",
-        "optionsType": "nothing",
-        "x": 460,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "2b0affa0c70bef38",
-        "type": "inject",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "Luminosité max le matin 6:20",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "20 06 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "255",
-        "payloadType": "num",
-        "x": 210,
-        "y": 560,
-        "wires": [
-            [
-                "53a0c6fe363eab8b"
-            ]
-        ]
-    },
-    {
-        "id": "53a0c6fe363eab8b",
-        "type": "zigbee2mqtt-out",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "",
-        "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampes_Escalier 0 a 1",
-        "device_id": "0",
-        "command": "brightness",
-        "commandType": "z2m_cmd",
-        "payload": "255",
-        "payloadType": "num",
-        "optionsValue": "",
-        "optionsType": "nothing",
-        "x": 460,
-        "y": 560,
-        "wires": []
     },
     {
         "id": "5a300b5c8797c7d0",
@@ -677,12 +798,12 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
+                "t": "cont",
                 "v": "true",
                 "vt": "str"
             },
             {
-                "t": "eq",
+                "t": "cont",
                 "v": "false",
                 "vt": "str"
             }
@@ -690,110 +811,13 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 670,
-        "y": 300,
+        "x": 510,
+        "y": 360,
         "wires": [
             [
-                "391d39ebc14d49c7"
-            ],
-            [
-                "25a9d013c63a9aaf"
-            ]
-        ]
-    },
-    {
-        "id": "b2c1c31135250f08",
-        "type": "change",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "ALLUMAGE",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "ON",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 950,
-        "y": 340,
-        "wires": [
-            [
-                "af162e119d899f79",
                 "37b283ee0e20393e"
-            ]
-        ]
-    },
-    {
-        "id": "391d39ebc14d49c7",
-        "type": "switch",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "Si luminosité forte (journée)",
-        "property": "payload.illuminance_above_threshold",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "false",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 900,
-        "y": 300,
-        "wires": [
-            [
-                "b2c1c31135250f08"
-            ]
-        ]
-    },
-    {
-        "id": "85670a344f522997",
-        "type": "debug",
-        "z": "8a78fc9bf03685af",
-        "g": "88283a1bd84fdbce",
-        "name": "Debug detecteurs escaliers",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 560,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "5976452880a7a5dc",
-        "type": "zigbee2mqtt-in",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "",
-        "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Detecteur poubelles (E1525/E1745)",
-        "device_id": "0x842e14fffe8d8729",
-        "state": "occupancy",
-        "outputAtStartup": true,
-        "filterChanges": true,
-        "enableMultiple": false,
-        "x": 200,
-        "y": 740,
-        "wires": [
-            [
-                "4fa85a3fc565a9ba",
-                "65501524b171f0fb"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -803,7 +827,7 @@
         "g": "89dc8d7d73b0afd3",
         "name": "Allumage",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampe poubelle (LED1836G9)",
+        "friendly_name": "Eclairage poubelles (LED1836G9)",
         "device_id": "0x842e14fffe4d96de",
         "command": "state",
         "commandType": "z2m_cmd",
@@ -811,26 +835,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 700,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "4fa85a3fc565a9ba",
-        "type": "debug",
-        "z": "8a78fc9bf03685af",
-        "g": "89dc8d7d73b0afd3",
-        "name": "Debug detecteur poubelles",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 800,
+        "x": 720,
+        "y": 720,
         "wires": []
     },
     {
@@ -839,7 +845,7 @@
         "z": "8a78fc9bf03685af",
         "g": "010dbb615bda4d4e",
         "name": "ZigbeeBridge",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -849,24 +855,6 @@
         "statusType": "auto",
         "x": 410,
         "y": 60,
-        "wires": []
-    },
-    {
-        "id": "fa583c2e352ebefb",
-        "type": "debug",
-        "z": "8a78fc9bf03685af",
-        "g": "5f2614821fc98646",
-        "name": "Eclairage chambre parents",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 480,
-        "y": 200,
         "wires": []
     },
     {
@@ -1018,7 +1006,7 @@
         "name": "Matin Week-End",
         "props": [],
         "repeat": "",
-        "crontab": "00 08 * * 6,0",
+        "crontab": "30 09 * * 6,0",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -1125,7 +1113,7 @@
         "g": "89dc8d7d73b0afd3",
         "name": "Extinction",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampe poubelle (LED1836G9)",
+        "friendly_name": "Eclairage poubelles (LED1836G9)",
         "device_id": "0x842e14fffe4d96de",
         "command": "state",
         "commandType": "z2m_cmd",
@@ -1133,8 +1121,8 @@
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 700,
-        "y": 760,
+        "x": 720,
+        "y": 780,
         "wires": []
     },
     {
@@ -1147,12 +1135,12 @@
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
+                "t": "cont",
                 "v": "true",
                 "vt": "str"
             },
             {
-                "t": "eq",
+                "t": "cont",
                 "v": "false",
                 "vt": "str"
             }
@@ -1160,8 +1148,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 490,
-        "y": 720,
+        "x": 510,
+        "y": 740,
         "wires": [
             [
                 "967fa7eb7d450c61",
@@ -1190,8 +1178,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 540,
-        "y": 660,
+        "x": 560,
+        "y": 680,
         "wires": [
             [
                 "2693e72fb25c1949"
@@ -1207,44 +1195,1400 @@
         "env": [
             {
                 "name": "start",
-                "value": "22:30",
+                "value": "21:00",
                 "type": "str"
             },
             {
                 "name": "stop",
-                "value": "7:00",
+                "value": "23:59",
                 "type": "str"
             }
         ],
-        "x": 910,
-        "y": 520,
+        "x": 710,
+        "y": 320,
         "wires": [
             [
-                "17bf05f535deb88e"
+                "af162e119d899f79",
+                "295508e9a9ce09a4",
+                "6a1892cf4bad0282",
+                "435674ee8c87c7ab",
+                "66425afb1daa7ceb"
             ],
             [
-                "b2a6e10e71fecbe4"
+                "3f38713c68d50bb2"
             ]
         ]
     },
     {
-        "id": "17bf05f535deb88e",
-        "type": "zigbee2mqtt-out",
+        "id": "57c87b30ea80eb7d",
+        "type": "zigbee2mqtt-in",
         "z": "8a78fc9bf03685af",
         "g": "88283a1bd84fdbce",
         "name": "",
         "server": "18c1bbfb6a2451d9",
-        "friendly_name": "Lampe Escalier 2 (LED1836G9)",
+        "friendly_name": "Detecteur Escalier B (SNZB-03)",
+        "device_id": "0x00124b002511d638",
+        "state": "0",
+        "outputAtStartup": false,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 190,
+        "y": 400,
+        "wires": [
+            [
+                "5a300b5c8797c7d0"
+            ]
+        ]
+    },
+    {
+        "id": "295508e9a9ce09a4",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Bas Escalier ON",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Escalier lampe Bas (LED1836G9)",
         "device_id": "0x842e14fffe88a3a9",
         "command": "state",
         "commandType": "z2m_cmd",
-        "payload": "payload",
-        "payloadType": "msg",
+        "payload": "on",
+        "payloadType": "z2m_payload",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 1210,
+        "x": 980,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "a85b5f67307b8161",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Test_Detecteur",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"battery\":100,\"battery_low\":false,\"linkquality\":132,\"occupancy\":true,\"tamper\":false,\"voltage\":3100}",
+        "payloadType": "json",
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "5a300b5c8797c7d0"
+            ]
+        ]
+    },
+    {
+        "id": "6a1892cf4bad0282",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Lampe Haut",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Escalier lampe Haut (LED1732G11)",
+        "device_id": "0x588e81fffead2185",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1000,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "93b147a291c3d018",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Lampe Bas",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Escalier lampe Bas (LED1836G9)",
+        "device_id": "0x842e14fffe88a3a9",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1000,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "435674ee8c87c7ab",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Louise",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Eclairage Palier vers CHB Louise (LED1836G9)",
+        "device_id": "0x842e14fffe4db8ce",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1200,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "66425afb1daa7ceb",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier SDB",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Eclairage Palier 1ier vers SDB (LED1836G9)",
+        "device_id": "0x842e14fffea22f9e",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "off",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1190,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "64948b6192e1a842",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Lampe Bas",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Escalier lampe Bas (LED1836G9)",
+        "device_id": "0x842e14fffe88a3a9",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1000,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "dd708280f510e18d",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier SDB",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Eclairage Palier 1ier vers SDB (LED1836G9)",
+        "device_id": "0x842e14fffea22f9e",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1190,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b2402425e85a3343",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Louise",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Eclairage Palier vers CHB Louise (LED1836G9)",
+        "device_id": "0x842e14fffe4db8ce",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1200,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3e3e85f5c73f6e26",
+        "type": "zigbee2mqtt-out",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Escalier Lampe Haut",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Escalier lampe Haut (LED1732G11)",
+        "device_id": "0x588e81fffead2185",
+        "command": "state",
+        "commandType": "z2m_cmd",
+        "payload": "on",
+        "payloadType": "z2m_payload",
+        "optionsValue": "",
+        "optionsType": "nothing",
+        "x": 1000,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3f38713c68d50bb2",
+        "type": "subflow:7cc13ada.b6712c",
+        "z": "8a78fc9bf03685af",
+        "g": "88283a1bd84fdbce",
+        "name": "Tot?",
+        "env": [
+            {
+                "name": "stop",
+                "value": "08:00",
+                "type": "str"
+            }
+        ],
+        "x": 710,
+        "y": 380,
+        "wires": [
+            [
+                "af162e119d899f79",
+                "295508e9a9ce09a4"
+            ],
+            [
+                "af162e119d899f79",
+                "3e3e85f5c73f6e26",
+                "b2402425e85a3343",
+                "64948b6192e1a842",
+                "dd708280f510e18d"
+            ]
+        ]
+    },
+    {
+        "id": "66a58e98ab6037f0",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "789a50f3d570c165",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Détecteur Poubelles (SNZB-03)",
+        "device_id": "0x00124b002a6cf6fa",
+        "state": "0",
+        "outputAtStartup": true,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 190,
+        "y": 600,
+        "wires": [
+            [
+                "65501524b171f0fb"
+            ]
+        ]
+    },
+    {
+        "id": "ffb8606e191cb99a",
+        "type": "zigbee2mqtt-in",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Porte de garage (SNZB-04)",
+        "device_id": "0x00124b0022ed194d",
+        "state": "contact",
+        "outputAtStartup": true,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 180,
+        "y": 1300,
+        "wires": [
+            [
+                "826f7d5e1fc85642"
+            ]
+        ]
+    },
+    {
+        "id": "bedf15845d296d13",
+        "type": "delay",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "20",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 1360,
+        "wires": [
+            [
+                "1a0f490f1de11989",
+                "0115839daf416040"
+            ]
+        ]
+    },
+    {
+        "id": "826f7d5e1fc85642",
+        "type": "switch",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "Ouverte?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 1300,
+        "wires": [
+            [
+                "7de5ae9a9d52000f"
+            ],
+            [
+                "bedf15845d296d13"
+            ]
+        ],
+        "outputLabels": [
+            "Non",
+            "Oui"
+        ]
+    },
+    {
+        "id": "7de5ae9a9d52000f",
+        "type": "change",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "True",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 1260,
+        "wires": [
+            [
+                "bedf15845d296d13"
+            ]
+        ]
+    },
+    {
+        "id": "209090ef89acf2dc",
+        "type": "inject",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 630,
+        "y": 1420,
+        "wires": [
+            [
+                "1a0f490f1de11989",
+                "0115839daf416040"
+            ]
+        ]
+    },
+    {
+        "id": "d5a40fae7544f80f",
+        "type": "zigbee2mqtt-get",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Porte de garage (SNZB-04)",
+        "device_id": "0x00124b0022ed194d",
+        "state": "contact",
+        "enableMultiple": false,
+        "x": 260,
+        "y": 1360,
+        "wires": [
+            [
+                "826f7d5e1fc85642"
+            ]
+        ]
+    },
+    {
+        "id": "1a0f490f1de11989",
+        "type": "sendsms",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "creds": "439c3a08b11e4e0a",
+        "to": "33 7 52 08 46 38",
+        "fr": "Automate de la maison",
+        "text": "Porte de garage ouverte depuis longtemps.",
+        "unicode": false,
+        "x": 790,
+        "y": 1360,
+        "wires": [
+            [
+                "d5a40fae7544f80f"
+            ]
+        ]
+    },
+    {
+        "id": "0115839daf416040",
+        "type": "sendsms",
+        "z": "8a78fc9bf03685af",
+        "g": "0ba7747e986083a3",
+        "creds": "439c3a08b11e4e0a",
+        "to": "33 6 70 18 28 80",
+        "fr": "Automate de la maison",
+        "text": "Porte de garage ouverte depuis longtemps.",
+        "unicode": false,
+        "x": 790,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b83445f.95ef74",
+        "type": "http request",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Recupe status.xml de l'IPX",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://192.168.0.214/status.xml",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 420,
+        "y": 140,
+        "wires": [
+            [
+                "6a44f6d2.63742"
+            ]
+        ]
+    },
+    {
+        "id": "60345379.7335cc",
+        "type": "inject",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "VERIF IPX800",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "14400",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "6b83445f.95ef74"
+            ]
+        ]
+    },
+    {
+        "id": "93a6bc32.964338",
+        "type": "debug",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Date OK, pas d'action",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6a44f6d2.63742",
+        "type": "xml",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "61b330c0.943d4"
+            ]
+        ]
+    },
+    {
+        "id": "61b330c0.943d4",
+        "type": "function",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Date OK?",
+        "func": "var d = new Date();\nif (msg.payload.response.day[0].includes(d.getFullYear().toString()))\n{\n   return [ msg, null ];\n} else {\n    msg.topic = \"ALERTE IOT : IPX800\"\n    msg.payload = \"Redémarrage de l'IPX800 demandé.\"\n   return [ null, msg ];\n}\nreturn msg;",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 200,
+        "wires": [
+            [
+                "93a6bc32.964338"
+            ],
+            [
+                "32fe9461.a31a9c"
+            ]
+        ]
+    },
+    {
+        "id": "32fe9461.a31a9c",
+        "type": "http request",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Redémarrage de l'IPX800",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.214/protect/settings/reboot.htm?IPX800_V3",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 730,
+        "y": 220,
+        "wires": [
+            [
+                "688d8710.dd2ff8",
+                "c5d80b6f1efa0795"
+            ]
+        ]
+    },
+    {
+        "id": "688d8710.dd2ff8",
+        "type": "debug",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Résultat redémarrage",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1000,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3443a94b.1d3d2e",
+        "type": "comment",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Fonctionnement",
+        "info": "Régulièrement l'IPX se dé-synchronise du serveur de temps.\nEn conséquence les tâches planifiées ne s'effectuent plus. Seul un redémarrage de l'IPX peut corriger le problème.\n\nLe flow se connecte à l'IPX et récupère le fichier status.xml contenant tous les états/compteurs de l'IPX ainsi que la valeur de son horloge. En fonction de cette valeur, il lance ou pas un redémarrage en se connectant à la page http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3\nIl vérifie que l'année de la date renvoyée par le fichier xml est bien celle de l'année en cours ce qui montre que l'IPX800 est bien synchronisée.",
+        "x": 160,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "62f42068.824698",
+        "type": "catch",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "En cas d'impossibilité de se connecter à l'IPX ou d'obtenir le fichier XML",
+        "scope": [
+            "6b83445f.95ef74"
+        ],
+        "uncaught": false,
+        "x": 330,
+        "y": 360,
+        "wires": [
+            [
+                "efce1de91fa4997e",
+                "17e782a82a4b9951"
+            ]
+        ]
+    },
+    {
+        "id": "efce1de91fa4997e",
+        "type": "debug",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "name": "Message d'erreur lecture IPX.xml",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "17e782a82a4b9951",
+        "type": "email-send",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "ATTENTION Lecture données IPX impossible",
+        "contentType": "text",
+        "name": "Info Lecture données IPX impossible",
+        "x": 770,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c5d80b6f1efa0795",
+        "type": "email-send",
+        "z": "f4db60bf.7cb8c",
+        "g": "e102e7aa.73033",
+        "transport": "0ca1a15e29858943",
+        "from": "iot@clairealex.fr",
+        "to": "alexandre.moulart@clairealex.fr",
+        "cc": "alexandre.moulart@se.com",
+        "bcc": "",
+        "subject": "INFO Redémarrage de l'IPX800 ",
+        "contentType": "text",
+        "name": "INFO Redémarrage de l'IPX800 ",
+        "x": 970,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2078e7f42f83fab",
+        "type": "http request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Recupe status.xml de l'IPX",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://192.168.0.214/status.xml",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 440,
+        "y": 480,
+        "wires": [
+            [
+                "50394144fc93b9f8"
+            ]
+        ]
+    },
+    {
+        "id": "f092e4a5d029bf7b",
+        "type": "inject",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VERIF IPX800",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "d2078e7f42f83fab"
+            ]
+        ]
+    },
+    {
+        "id": "50394144fc93b9f8",
+        "type": "xml",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "property": "payload",
+        "attr": "",
+        "chr": "",
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "f397b3f6b00f7f22"
+            ]
+        ]
+    },
+    {
+        "id": "f397b3f6b00f7f22",
+        "type": "switch",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VMC à l'arrêt?",
+        "property": "payload.response.btn2",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "dn",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "up",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "1e50c7ad7ff0d555"
+            ],
+            [
+                "df143cacff2c7957"
+            ]
+        ]
+    },
+    {
+        "id": "6afd16dff8838a28",
+        "type": "ui-slider",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "group": "abe219b4d55df21f",
+        "name": "Vitesse de la ventilation",
+        "label": "Vitesse ",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": true,
+        "min": 0,
+        "max": "2",
+        "step": 1,
+        "className": "",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            [
+                "2bbfe52978827116"
+            ]
+        ]
+    },
+    {
+        "id": "1e50c7ad7ff0d555",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Slider à zéro",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "6afd16dff8838a28"
+            ]
+        ]
+    },
+    {
+        "id": "df143cacff2c7957",
+        "type": "switch",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VMC à vitesse lente",
+        "property": "payload.response.btn0",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "dn",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "8604f49a62d71f9e"
+            ],
+            [
+                "ebe9de659eb140f6"
+            ]
+        ]
+    },
+    {
+        "id": "8604f49a62d71f9e",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Slider à un",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 600,
+        "wires": [
+            [
+                "6afd16dff8838a28"
+            ]
+        ]
+    },
+    {
+        "id": "ebe9de659eb140f6",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Slider à deux",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 640,
+        "wires": [
+            [
+                "6afd16dff8838a28"
+            ]
+        ]
+    },
+    {
+        "id": "2bbfe52978827116",
+        "type": "switch",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 680,
+        "y": 740,
+        "wires": [
+            [
+                "ca51220c7773961b"
+            ],
+            [
+                "023f313706e7a9fa"
+            ],
+            [
+                "2b4726a6dc8fcca0"
+            ]
+        ]
+    },
+    {
+        "id": "ca51220c7773961b",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VMC à l'arrêt",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set031 Set010 Set040",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 660,
+        "wires": [
+            [
+                "da008f54901cc831"
+            ]
+        ]
+    },
+    {
+        "id": "023f313706e7a9fa",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VMC en fonction",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set030",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 720,
+        "wires": [
+            [
+                "9d4f0fbfb10d04eb"
+            ]
+        ]
+    },
+    {
+        "id": "bb1454896d323f87",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Insuf Lente",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set010",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 760,
+        "wires": [
+            [
+                "6c87992a08a06a2b"
+            ]
+        ]
+    },
+    {
+        "id": "ce5f1220964693af",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Extraction lente",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set040",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 800,
+        "wires": [
+            [
+                "b6c0fe1f96500599"
+            ]
+        ]
+    },
+    {
+        "id": "2b4726a6dc8fcca0",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "VMC en fonction",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set030",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 860,
+        "wires": [
+            [
+                "519ba4bd573e4d7f"
+            ]
+        ]
+    },
+    {
+        "id": "25af6e728ace967b",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Insuf Rapide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set011",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 900,
+        "wires": [
+            [
+                "86e002b53ef1ea4e"
+            ]
+        ]
+    },
+    {
+        "id": "157a01391cd115ec",
+        "type": "change",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Extraction rapide",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Set041",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 940,
+        "wires": [
+            [
+                "eaac69e4ea61fa96"
+            ]
+        ]
+    },
+    {
+        "id": "9d4f0fbfb10d04eb",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 720,
+        "wires": [
+            [
+                "bb1454896d323f87"
+            ]
+        ]
+    },
+    {
+        "id": "6c87992a08a06a2b",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 760,
+        "wires": [
+            [
+                "ce5f1220964693af"
+            ]
+        ]
+    },
+    {
+        "id": "b6c0fe1f96500599",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da008f54901cc831",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "519ba4bd573e4d7f",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 860,
+        "wires": [
+            [
+                "25af6e728ace967b"
+            ]
+        ]
+    },
+    {
+        "id": "86e002b53ef1ea4e",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 900,
+        "wires": [
+            [
+                "157a01391cd115ec"
+            ]
+        ]
+    },
+    {
+        "id": "eaac69e4ea61fa96",
+        "type": "tcp request",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "",
+        "server": "192.168.0.214",
+        "port": "9870",
+        "out": "time",
+        "ret": "string",
+        "splitc": "0",
+        "newline": "",
+        "trim": false,
+        "tls": "",
+        "x": 1250,
+        "y": 940,
+        "wires": [
+            [
+                "225715f1fb62950d"
+            ]
+        ]
+    },
+    {
+        "id": "225715f1fb62950d",
+        "type": "delay",
+        "z": "f4db60bf.7cb8c",
+        "g": "fc4d7b3fdd8d7679",
+        "name": "Passe la VMC en mode lent automatiquement après 30 minutes",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1090,
+        "y": 1000,
+        "wires": [
+            [
+                "023f313706e7a9fa"
+            ]
+        ]
     },
     {
         "id": "3cc11d24.ff01a2",
@@ -1398,52 +2742,12 @@
         ]
     },
     {
-        "id": "e90c0aba2c2dbf5b",
-        "type": "email-send",
-        "z": "f6f2187d.f17ca8",
-        "g": "3e85591c6b28eec5",
-        "transport": "0ca1a15e29858943",
-        "from": "iot@clairealex.fr",
-        "to": "alexandre.moulart@clairealex.fr",
-        "cc": "alexandre.moulart@se.com",
-        "bcc": "",
-        "subject": "IOT : Connexion NET KO ou lente",
-        "contentType": "text",
-        "name": "Info Connexion KO",
-        "x": 730,
-        "y": 500,
-        "wires": [
-            [
-                "b0fe8155417905e8"
-            ]
-        ]
-    },
-    {
-        "id": "ab99bb39a27eee06",
-        "type": "speedtest",
-        "z": "f6f2187d.f17ca8",
-        "g": "3e85591c6b28eec5",
-        "name": "",
-        "maxTime": 5000,
-        "serverId": "",
-        "acceptLicense": true,
-        "acceptGdpr": true,
-        "x": 200,
-        "y": 460,
-        "wires": [
-            [
-                "2811ceaac726f243",
-                "8b89075617fd1890"
-            ]
-        ]
-    },
-    {
         "id": "b0fe8155417905e8",
         "type": "debug",
         "z": "f6f2187d.f17ca8",
         "g": "3e85591c6b28eec5",
         "name": "Speedtest Log",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1509,7 +2813,7 @@
                 "9dade99a33b4458d"
             ],
             [
-                "ab99bb39a27eee06"
+                "297032eb92ecd6c7"
             ]
         ]
     },
@@ -1521,15 +2825,15 @@
         "name": "OFF Alim BOX",
         "server": "18c1bbfb6a2451d9",
         "friendly_name": "Alim box internet (E1603/E1702/E1708)",
-        "device_id": "0x385b44fffee335eb",
+        "device_id": "0x0c4314fffe1352d8",
         "command": "state",
         "commandType": "z2m_cmd",
         "payload": "off",
         "payloadType": "str",
         "optionsValue": "",
         "optionsType": "nothing",
-        "x": 720,
-        "y": 300,
+        "x": 880,
+        "y": 320,
         "wires": []
     },
     {
@@ -1566,7 +2870,7 @@
         "name": "ON Alim BOX",
         "server": "18c1bbfb6a2451d9",
         "friendly_name": "Alim box internet (E1603/E1702/E1708)",
-        "device_id": "0x385b44fffee335eb",
+        "device_id": "0x0c4314fffe1352d8",
         "command": "state",
         "commandType": "z2m_cmd",
         "payload": "on",
@@ -1660,8 +2964,8 @@
         "subject": "Redémarrage de la connexion internet",
         "contentType": "text",
         "name": "Info reset de la connexion",
-        "x": 830,
-        "y": 400,
+        "x": 910,
+        "y": 460,
         "wires": [
             []
         ]
@@ -1698,7 +3002,7 @@
         "z": "f6f2187d.f17ca8",
         "g": "3e85591c6b28eec5",
         "name": "debug counter",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -1732,38 +3036,197 @@
         "y": 400,
         "wires": [
             [
+                "2cc8d9f2b5261b88"
+            ]
+        ]
+    },
+    {
+        "id": "2cc8d9f2b5261b88",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "Récupération du fichier log",
+        "func": "msg.topic = \"Redémarrage de la BOX suite ralentissement\"; // email subject\n\nmsg.payload = \"Redémarrage de la BOX suite ralentissement\"; // email body\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 400,
+        "wires": [
+            [
                 "33de0144ba188644"
             ]
         ]
     },
     {
-        "id": "6b83445f.95ef74",
-        "type": "http request",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Recupe status.xml de l'IPX",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "body",
-        "url": "http://192.168.1.139/status.xml",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 420,
-        "y": 160,
+        "id": "297032eb92ecd6c7",
+        "type": "speedtest",
+        "z": "f6f2187d.f17ca8",
+        "g": "3e85591c6b28eec5",
+        "name": "",
+        "maxTime": 5000,
+        "serverId": "",
+        "acceptLicense": true,
+        "acceptGdpr": true,
+        "x": 180,
+        "y": 480,
         "wires": [
             [
-                "6a44f6d2.63742"
+                "2811ceaac726f243",
+                "8b89075617fd1890"
             ]
         ]
     },
     {
-        "id": "60345379.7335cc",
+        "id": "85b88d13fe142be6",
+        "type": "ui-button",
+        "z": "65ffe8411dc40a28",
+        "group": "e8bf7ab13ad9d896",
+        "name": "",
+        "label": "Arrêter la VMC pendant 30 minutes",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fan-off",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 280,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9fcadf82e3051ae",
+        "type": "comment",
+        "z": "65ffe8411dc40a28",
+        "name": "Accueil",
+        "info": "ssss",
+        "x": 110,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "add8ba69c8f357ba",
+        "type": "comment",
+        "z": "65ffe8411dc40a28",
+        "name": "Garage: ouvert/fermé, alarme si reste ouvert, Commande d'ouverture/fermeture, son si changement d'état",
+        "info": "",
+        "x": 420,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "14dcafa4dff451ea",
+        "type": "comment",
+        "z": "65ffe8411dc40a28",
+        "name": "Nipto: voir l'API",
+        "info": "",
+        "x": 140,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "4b26406a5a018387",
+        "type": "ui-switch",
+        "z": "65ffe8411dc40a28",
+        "name": "",
+        "label": "switch",
+        "group": "da9cf49dfda27873",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 550,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5daa293f94fe685c",
+        "type": "debug",
+        "z": "65ffe8411dc40a28",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "3a0b8d276be6e360",
+        "type": "zigbee2mqtt-get",
+        "z": "65ffe8411dc40a28",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Porte de garage (SNZB-04)",
+        "device_id": "0x00124b0022ed194d",
+        "state": "contact",
+        "enableMultiple": false,
+        "x": 260,
+        "y": 660,
+        "wires": [
+            [
+                "4b26406a5a018387",
+                "5daa293f94fe685c"
+            ]
+        ]
+    },
+    {
+        "id": "44ea7a7253b84abb",
+        "type": "zigbee2mqtt-in",
+        "z": "65ffe8411dc40a28",
+        "name": "",
+        "server": "18c1bbfb6a2451d9",
+        "friendly_name": "Porte de garage (SNZB-04)",
+        "device_id": "0x00124b0022ed194d",
+        "state": "contact",
+        "outputAtStartup": true,
+        "filterChanges": false,
+        "enableMultiple": false,
+        "x": 260,
+        "y": 700,
+        "wires": [
+            [
+                "4b26406a5a018387",
+                "5daa293f94fe685c"
+            ]
+        ]
+    },
+    {
+        "id": "b7d2eb4cf04c4e61",
         "type": "inject",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "VERIF IPX800",
+        "z": "65ffe8411dc40a28",
+        "name": "",
         "props": [
             {
                 "p": "payload"
@@ -1773,161 +3236,101 @@
                 "vt": "str"
             }
         ],
-        "repeat": "14400",
+        "repeat": "30",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 170,
-        "y": 160,
+        "x": 130,
+        "y": 600,
         "wires": [
             [
-                "6b83445f.95ef74"
+                "3a0b8d276be6e360"
             ]
         ]
     },
     {
-        "id": "93a6bc32.964338",
-        "type": "debug",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Date OK, pas d'action",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "6a44f6d2.63742",
-        "type": "xml",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "",
-        "property": "payload",
-        "attr": "",
-        "chr": "",
-        "x": 250,
-        "y": 220,
-        "wires": [
-            [
-                "61b330c0.943d4"
-            ]
-        ]
-    },
-    {
-        "id": "61b330c0.943d4",
-        "type": "function",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Date OK?",
-        "func": "var d = new Date();\nif (msg.payload.response.day[0].includes(d.getFullYear().toString()))\n{\n   return [ msg, null ];\n} else {\n    msg.topic = \"ALERTE IOT : IPX800\"\n    msg.payload = \"Redémarrage de l'IPX800 demandé.\"\n   return [ null, msg ];\n}\nreturn msg;",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 440,
-        "y": 220,
-        "wires": [
-            [
-                "93a6bc32.964338"
-            ],
-            [
-                "32fe9461.a31a9c"
-            ]
-        ]
-    },
-    {
-        "id": "32fe9461.a31a9c",
-        "type": "http request",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Redémarrage de l'IPX800",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 730,
-        "y": 240,
-        "wires": [
-            [
-                "688d8710.dd2ff8"
-            ]
-        ]
-    },
-    {
-        "id": "688d8710.dd2ff8",
-        "type": "debug",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Résultat redémarrage",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "3443a94b.1d3d2e",
+        "id": "100f962a17422cab",
         "type": "comment",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Fonctionnement",
-        "info": "Régulièrement l'IPX se dé-synchronise du serveur de temps.\nEn conséquence les tâches planifiées ne s'effectuent plus. Seul un redémarrage de l'IPX peut corriger le problème.\n\nLe flow se connecte à l'IPX et récupère le fichier status.xml contenant tous les états/compteurs de l'IPX ainsi que la valeur de son horloge. En fonction de cette valeur, il lance ou pas un redémarrage en se connectant à la page http://192.168.1.139/protect/settings/reboot.htm?IPX800_V3\nIl vérifie que l'année de la date renvoyée par le fichier xml est bien celle de l'année en cours ce qui montre que l'IPX800 est bien synchronisée.",
-        "x": 160,
-        "y": 280,
+        "z": "65ffe8411dc40a28",
+        "name": "ZIGBEE: état des points ZIGBEE et visaualisation s'il y en a des KO",
+        "info": "",
+        "x": 300,
+        "y": 1040,
         "wires": []
     },
     {
-        "id": "62f42068.824698",
-        "type": "catch",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "En cas d'impossibilité de se connecter à l'IPX ou d'obtenir le fichier XML",
-        "scope": [
-            "6b83445f.95ef74"
-        ],
-        "uncaught": false,
-        "x": 330,
-        "y": 380,
+        "id": "71d82697792263d9",
+        "type": "comment",
+        "z": "65ffe8411dc40a28",
+        "name": "VMC état de fonctionnement et commande de vitesse. ",
+        "info": "",
+        "x": 260,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "52fccf25d7ed8a5e",
+        "type": "comment",
+        "z": "65ffe8411dc40a28",
+        "name": "EAU, électricité, gaz, température",
+        "info": "",
+        "x": 190,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "368940171414d536",
+        "type": "ui-button",
+        "z": "65ffe8411dc40a28",
+        "group": "e8bf7ab13ad9d896",
+        "name": "",
+        "label": "Passer la VMC en vitesse lente",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fan-minus",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 400,
         "wires": [
-            [
-                "92e23916.20c6b"
-            ]
+            []
         ]
     },
     {
-        "id": "92e23916.20c6b",
-        "type": "function",
-        "z": "f4db60bf.7cb8c",
-        "g": "e102e7aa.73033",
-        "name": "Construction email",
-        "func": "msg.payload = \"Erreur de connexion IPX :\"+msg.error.message\nmsg.topic = \"ALERTE IOX : IPX800\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 380,
+        "id": "ebcda58083fdd4b0",
+        "type": "ui-button",
+        "z": "65ffe8411dc40a28",
+        "group": "e8bf7ab13ad9d896",
+        "name": "",
+        "label": "Passer la VMC en vitesse rapide",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fan-plus",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 440,
         "wires": [
             []
         ]
